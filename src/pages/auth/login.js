@@ -38,7 +38,7 @@ const Login = () => {
 
 
   if (typeof window !== 'undefined' && isAuthenticated)
-    router.push('/');
+    router.push('/dashboard/main');
 
   return (
     <Layout title={'Login'}  >
