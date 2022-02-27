@@ -1,5 +1,5 @@
 import Link from 'next/link'
-
+import { useRouter } from 'next/router'
 import {
     ShoppingBagIcon,
     ArrowCircleLeftIcon,
@@ -16,7 +16,8 @@ import { useDispatch } from "react-redux";
 import { logout } from '../../redux/actions/auth'
 
 const Sidebar = () => {
-
+    const router = useRouter()
+    console.log(router.pathname)
     const noSelect = ' flex items-center text-sm font-semibold text-gray-900 hover:text-indigo-600 transition duration-200 p-1'
     const noSelectIcon = 'h-6 w-6 mr-4 text-gray-700 hover:text-indigo-600 transition duration-200 '
 
@@ -56,9 +57,22 @@ const Sidebar = () => {
             <div className="mt-8">
                 <ul className="space-y-4">
                     <li>
-                        {/* <Link href={'/profile/orders'} className={window.location.pathname === '/profile/orders' ? select : noSelect}>
-                            <FireIcon className={window.location.pathname === '/profile/orders' ? selectIcon : noSelectIcon} />
-                            Mis Compras</Link> */}
+                        <Link href="/dashboard/main">
+                            <a className={router.pathname === '/dashboard/main' ? select : noSelect}>
+                                <FireIcon className={router.pathname === '/dashboard/main' ? selectIcon : noSelectIcon} />
+                                Mis Compras
+                            </a>
+
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/dashboard/students">
+                            <a className={router.pathname === '/dashboard/students' ? select : noSelect}>
+                                <FireIcon className={router.pathname === '/dashboard/students' ? selectIcon : noSelectIcon} />
+                                Estudiantes
+                            </a>
+
+                        </Link>
                     </li>
 
                 </ul>
