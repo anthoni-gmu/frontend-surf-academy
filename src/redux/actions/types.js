@@ -32,3 +32,7 @@ export const RESET_PASSWORD_CONFIRM_FAIL="RESET_PASSWORD_CONFIRM_FAIL"
 // Alerts
 export const SET_ALERT = 'SET_ALERT';
 export const REMOVE_ALERT = 'REMOVE_ALERT';
+
+// Alerts
+export const GET_STUDENTS = 'GET_STUDENTS';
+export const GET_STUDENTS_FAIL = 'GET_STUDENTS_FAIL';

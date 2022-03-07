@@ -16,8 +16,6 @@ const Login = () => {
   const isAuthenticated = useSelector(state => state.Auth.isAuthenticated);
   const loading = useSelector(state => state.Auth.loading);
 
-
-
   const [formData, setFormData] = useState({
     email: '',
     password: '',

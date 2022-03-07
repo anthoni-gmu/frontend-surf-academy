@@ -17,7 +17,7 @@ import { logout } from '../../redux/actions/auth'
 
 const Sidebar = () => {
     const router = useRouter()
-    console.log(router.pathname)
+    // console.log(router.pathname)
     const noSelect = ' flex items-center text-sm font-semibold text-gray-900 hover:text-indigo-600 transition duration-200 p-1'
     const noSelectIcon = 'h-6 w-6 mr-4 text-gray-700 hover:text-indigo-600 transition duration-200 '
 
