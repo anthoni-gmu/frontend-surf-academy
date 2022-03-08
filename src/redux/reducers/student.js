@@ -1,6 +1,9 @@
 import {
     GET_STUDENTS,
-    GET_STUDENTS_FAIL
+    GET_STUDENTS_FAIL,
+
+    CREATE_STUDENT,
+    CREATE_STUDENT_FAIL
 } from '../actions/types'
 
 
@@ -13,11 +16,13 @@ export default function Student(state = initialState, action) {
 
     switch (type) {
         case GET_STUDENTS:
+        case CREATE_STUDENT:
             return {
                 ...state,
                 students: payload.results,
             }
         case GET_STUDENTS_FAIL:
+        case CREATE_STUDENT_FAIL:
             return {
                 ...state,
                 students: null

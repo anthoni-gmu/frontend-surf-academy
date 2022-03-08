@@ -36,3 +36,6 @@ export const REMOVE_ALERT = 'REMOVE_ALERT';
 // Alerts
 export const GET_STUDENTS = 'GET_STUDENTS';
 export const GET_STUDENTS_FAIL = 'GET_STUDENTS_FAIL';
+
+export const CREATE_STUDENT = 'CREATE_STUDENT';
+export const CREATE_STUDENT_FAIL = 'CREATE_STUDENT_FAIL';
