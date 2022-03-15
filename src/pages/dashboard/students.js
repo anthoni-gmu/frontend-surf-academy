@@ -18,11 +18,17 @@ const Student = () => {
 
     return (
         <Layout>
+            <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                <div className="w-full lg:w-5/6">
+                    <AddStudent dispatch={dispatch} />
+                </div>
+
+            </div>
             <div className="overflow-x-auto ">
                 <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+
                     <div className="w-full lg:w-5/6">
-                        <AddStudent dispatch={dispatch} />
-                        <TableStudents students={students} />
+                        <TableStudents students={students} dispatch={dispatch}/>
                     </div>
                 </div>
             </div>
