@@ -9,7 +9,10 @@ import {
     UPDATE_STUDENT_FAIL,
 
     DELETE_STUDENT,
-    DELETE_STUDENT_FAIL
+    DELETE_STUDENT_FAIL,
+
+    SEARCH_STUDENT,
+    SEARCH_STUDENT_FAIL
 } from "./types";
 
 import axios from "axios";
@@ -182,6 +185,47 @@ export const delete_student = (
     } catch (err) {
         dispatch({
             type: DELETE_STUDENT_FAIL
+        });
+        dispatch(setAlert('Ocurrio un error en el servidor', 'red'));
+
+    }
+
+}
+export const search_student = (
+    search
+) => async dispatch => {
+    const body = JSON.stringify({
+        search,
+    });
+    const config = {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `JWT ${getStorLocal('access')}`
+        },
+    };
+
+    try {
+
+        const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/student/searchstudent`,body, config)
+
+        if (res.status === 200) {
+            dispatch({
+                type: SEARCH_STUDENT,
+                payload: res.data
+            });
+            dispatch(setAlert('Resultados', 'green'));
+
+        } else {
+            dispatch({
+                type: SEARCH_STUDENT_FAIL,
+            });
+            dispatch(setAlert('Los datos ingresados no son los correctos', 'red'));
+
+        }
+    } catch (err) {
+        dispatch({
+            type: SEARCH_STUDENT_FAIL
         });
         dispatch(setAlert('Ocurrio un error en el servidor', 'red'));
 

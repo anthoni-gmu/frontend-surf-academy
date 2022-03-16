@@ -9,7 +9,10 @@ import {
     UPDATE_STUDENT_FAIL,
 
     DELETE_STUDENT,
-    DELETE_STUDENT_FAIL
+    DELETE_STUDENT_FAIL,
+
+    SEARCH_STUDENT,
+    SEARCH_STUDENT_FAIL
 } from '../actions/types'
 
 
@@ -25,6 +28,7 @@ export default function Student(state = initialState, action) {
         case CREATE_STUDENT:
         case UPDATE_STUDENT:
         case DELETE_STUDENT:
+        case SEARCH_STUDENT:
             return {
                 ...state,
                 students: payload.results,
@@ -33,6 +37,7 @@ export default function Student(state = initialState, action) {
         case CREATE_STUDENT_FAIL:
         case UPDATE_STUDENT_FAIL:
         case DELETE_STUDENT_FAIL:
+        case SEARCH_STUDENT_FAIL:
             return {
                 ...state,
                 students: null
