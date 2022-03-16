@@ -29,5 +29,8 @@
     "postcss": "^8.4.6",
     "redux-devtools-extension": "^2.13.9",
     "tailwindcss": "^3.0.23"
-  }
+  },
+  "cacheDirectories": [
+    ".next/cache"
+  ]
 }
