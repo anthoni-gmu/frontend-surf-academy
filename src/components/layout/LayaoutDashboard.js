@@ -57,10 +57,10 @@ const LayaoutDashboard = ({ title, content, children }) => {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="#"
+                      href="./main"
                       className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                     >
-                      Your Profile
+                     Dashboart
                     </a>
                   )}
                 </Menu.Item>
